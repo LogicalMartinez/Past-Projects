@@ -28,9 +28,7 @@
 ///// TO-DO LIST //////
 ///////////////////////
 
-* Finish NatSpec
-* Check style guides
-* optimize for gas
+* DONE!
 
 */
 
@@ -255,7 +253,7 @@ contract DarkPool {
         emit sold(buyer, auctioneer, USDCamount, auctionAmount);
     }
 
-    /// @notice This function allows the auctioneer to sell the tokens at the highest bid, to the highestBidder
+    /// @notice This function allows the auctioneer to sell the tokens at the highest bid, to the highest bidder
     function approveBid() public onlyAuctioneer {
         auctionDetails storage details = auctions[auctioneer];
         uint256 USDCamount = highestBid;
@@ -283,6 +281,7 @@ contract DarkPool {
         emit changeofState(state.CLOSED);
     }
 
+    /// @notice This function is used to cancel the auction
     function cancelAuction() public onlyAuctioneer {
         auctionDetails storage details = auctions[auctioneer];
         require(msg.sender != address(0));
@@ -310,7 +309,7 @@ contract DarkPool {
 
     /// @notice This function is used to tokens withdraw from this contract
     /// @param _token This is the token a user wants to withdraw
-    /// @param amount This the amount of the token a user wants to withdrae
+    /// @param amount This is the amount of the token a user wants to withdraw
     function withdraw(address _token, uint256 amount) public {
         require(msg.sender != address(0));
         require(Token_Balance[msg.sender][_token] >= amount);
@@ -328,7 +327,7 @@ contract DarkPool {
     }
 
     ///
-    /// @param amount This the amount of USDC a user wants to withdraw from the auction bid or is no longer the highest bidder and wants to withdraw his funds
+    /// @param amount This is the amount of USDC a user wants to withdraw from the auction bid or is no longer the highest bidder and wants to withdraw his funds
     function withdrawAuctionBid(uint256 amount) public {
         address _bidder = msg.sender;
         require(_bidder != address(0));
@@ -388,7 +387,7 @@ contract DarkPool {
         auctionDetails storage details = auctions[auctioneer];
         return details.tokenAmount;
     }
-
+    /// @return Returns the balance for the user and the selected token
     function seeTokenBalance(
         address userAddress,
         address _token
@@ -401,7 +400,7 @@ contract DarkPool {
         auctionDetails storage details = auctions[auctioneer];
         return details._token;
     }
-
+    /// @return Returns the price of the token inputted
     function getUsdValue(
         address _token,
         uint256 amount // in WEI
@@ -414,10 +413,12 @@ contract DarkPool {
         return State;
     }
 
+    /// @return Returns your bid
     function seeYourBids(address bidder) external view returns (uint256) {
         return bids[bidder];
     }
 
+    /// @return Returns auctioneer reserves
     function seeAuctioneerReserves(
         address _auctioneer
     ) external view returns (uint256) {
