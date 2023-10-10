@@ -76,10 +76,6 @@ contract DarkPool {
     ////////////////////////
     address private constant WBTC = 0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599;
     address private constant USDC = 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48;
-    // address private constant WBTC_USD_PRICE_FEED =
-    //     0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c; // BTC / USD
-    // address private constant USDC_USD_PRICE_FEED =
-    //     0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6;
     address private auctioneer;
     address private highestBidder;
     uint256 private highestBid;
@@ -153,11 +149,6 @@ contract DarkPool {
     function depositToken(address _token, uint256 amount) public {
         require(msg.sender != address(0));
         require(_token == WBTC || _token == USDC);
-        // for (uint256 i = 0; i < whitelist.length; i++) {
-        //     if (_token != whitelist[i]) {
-        //         revert();
-        //     }
-        // }
 
         Token = IERC20(_token);
         address _from = msg.sender;
