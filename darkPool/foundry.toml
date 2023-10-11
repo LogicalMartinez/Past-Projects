@@ -1,0 +1,7 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+remappings = ["@openzeppelin/=//Users/owner/logical-projects/darkPool/lib/openzeppelin-contracts", '@chainlink/=//Users/owner/logical-projects/darkPool/lib/chainlink-brownie-contracts', '@bitcoin/=///Users/owner/logical-projects/darkPool/lib/bitcoin-token-smart-contracts/']
+
+# See more config options https://github.com/foundry-rs/foundry/tree/master/config

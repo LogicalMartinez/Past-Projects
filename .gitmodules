@@ -1,0 +1,6 @@
+[submodule "A0FinancialGroup/lib/forge-std"]
+	path = A0FinancialGroup/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
+[submodule "A0FinancialGroup/lib/openzeppelin-contracts"]
+	path = A0FinancialGroup/lib/openzeppelin-contracts
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts
