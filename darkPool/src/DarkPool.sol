@@ -28,9 +28,7 @@
 ///// TO-DO LIST //////
 ///////////////////////
 
-* Finish NatSpec
-* Check style guides
-* optimize for gas
+* Done
 
 */
 
