@@ -48,7 +48,10 @@ error SWAP_NOT_SUCCESSFUL();
 
 /// @title A Darkpool for Whales with a lot of WBTC
 /// @author Christopher (logical) Martinez
-/// @notice A user can deposit a large amount of WBTC and auction it for USDC
+/// @notice A user can deposit a large amount of WBTC and auction it for USDC. 
+/// A Dark Pool is a private, off-exchange trading platform or forum where large financial institutions and investors trade stocks and other securities. 
+/// Unlike public stock exchanges, Dark Pools are not visible to regular investors, and the trades that happen within them are not disclosed to the public until after they are completed. 
+/// They are often used for large block trades that could significantly impact stock prices if executed on public exchanges.
 contract DarkPool {
     ////////////////////////
     /// Type Declartions ///
